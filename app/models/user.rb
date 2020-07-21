@@ -9,8 +9,17 @@ class User < ApplicationRecord
   has_many :posts
   has_many :comments, dependent: :destroy
   has_many :likes, dependent: :destroy
-  has_many :user_friendship, class_name: 'Friendship', foreign_key: 'user_id'
-  has_many :friends, through: :user_friendship, source: :friendship_user
-  has_many :friendships, class_name: 'Friendship', foreign_key: 'friendship_id'
-  has_many :folks, through: :friendships, source: :friendship_folk
+
+  has_many :friendships
+  has_many :friends_user, class_name: 'Friendship', foreign_key: 'friendship_id'
+  has_many :folks, through: :friends_user, source: :friends
+  
+  # has_many :user_friendship, class_name: 'Friendship', foreign_key: 'user_id'
+  # has_many :friends, through: :user_friendship, source: :friendship_user
+  # has_many :friendships, class_name: 'Friendship', foreign_key: 'friendship_id'
+  # has_many :folks, through: :friendships, source: :friendship_folk
+
+  # has_many :friendships
+  # has_many :friends, through: :friendships
+  # has_many :inverse_friendships, class_name: 'Friendship', foreign_key: 'friendship_id'
 end
