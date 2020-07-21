@@ -13,7 +13,6 @@ class User < ApplicationRecord
   has_many :friendships
   has_many :friends_user, class_name: 'Friendship', foreign_key: 'friendship_id'
   has_many :folks, through: :friends_user, source: :friends
-  
   # has_many :user_friendship, class_name: 'Friendship', foreign_key: 'user_id'
   # has_many :friends, through: :user_friendship, source: :friendship_user
   # has_many :friendships, class_name: 'Friendship', foreign_key: 'friendship_id'

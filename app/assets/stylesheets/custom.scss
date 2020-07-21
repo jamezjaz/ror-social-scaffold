@@ -136,6 +136,19 @@ a {
   }
 }
 
+.friend_button {
+  background: #689f38;
+  padding: 4px;
+  border-radius: 5px;
+}
+
+.friend_button_link {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: lighter;
+}
+
 form {
   width: 80%;
   margin: 8px 0;
