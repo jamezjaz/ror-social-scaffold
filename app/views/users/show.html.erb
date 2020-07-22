@@ -1,5 +1,6 @@
 <section class="user-section">
-  <h2><%= "Name: #{@user.name}" %> <% if current_user.id != @user.id %>
+  <h2><%= "Name: #{@user.name}" %>
+    <% if current_user.id != @user.id %>
       <span class="friend_button">
         <%= send_friend_request(@user.id) %>
 
@@ -13,4 +14,6 @@
       <%= render @posts %>
     </ul>
   </article>
+  <h2>Frinds List</h2>
+  <%= @friends %>
 </section>
