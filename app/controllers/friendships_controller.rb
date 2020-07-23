@@ -1,11 +1,29 @@
 class FriendshipsController < ApplicationController
 
   def create
-    if friend?(user_id)
-      puts "Yesss again"
+    @user = Friendship.new(friendship_id: params[:user_id])
+    @user.user_id = current_user.id
+    @user.status = 'Pending'
+    if @user.save
+      flash[:notice] = 'Friend Request Sent'
+      redirect_to users_path
     end
-
   end
+
+  def update
+    @friendship = Friendship.find(params[:id])
+    @friendship.update(status: true)
+    # @user = Friendship.where(user_id: current_user.id, friendship_id: params[:user_id])
+    # if @user.save
+  #     flash[:notice] = 'Friend Request Accepted'
+  #     redirect_to users_path
+  #   end
+  end
+
+  def edit
+    
+  end
+
   # def create
   #   @friendship =  Friendship.new
   #   @friendship.user_id = current_user.id
