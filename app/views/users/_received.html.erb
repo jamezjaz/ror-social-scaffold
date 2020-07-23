@@ -1,5 +1,4 @@
-<% @users.where(id: current_user.friends).each do |x|  %>
-
+<% @users.where(id: current_user.received_requests).each do |x|  %>
 
   <ul class="users-list">
       <li>

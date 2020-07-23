@@ -16,8 +16,51 @@ class User < ApplicationRecord
 
 
   def friends
-    request_i_sent = Friendship.where(user_id:id, status: "Confirmed").pluck(:friendship_id)
+    friends_array = friendships.map { |friendship| friendship.friendship_id if friendship.status == "Confirmed" }
+    friends_array += friends_user.map { |friendship| friendship.user_id if friendship.status == "Confirmed" }
+    friends_array.compact
   end
+
+  def received_requests
+    friends_array = friends_user.map { |friendship| friendship.user_id if friendship.status == "Pending" }
+    friends_array.compact
+  end
+
+  def pending_requests
+    friends_array = friendships.map { |friendship| friendship.friendship_id if friendship.status == "Pending" }
+    friends_array.compact
+  end
+
+  def confirm_friendship(user)
+    friendship = friends_user.find { |friendship| friendship.user_id = user }
+    friendship.status = 'Confirmed'
+    friendship.save
+  end
+
+  def friend?(user)
+    friends.include?(user)
+  end
+
+
+  # # Users who have yet to confirm friend requests
+  # def pending_friends
+  #   friendships.map { |friendship| friendship.friend unless friendship.confirmed }.compact
+  # end
+
+  # # Users who have requested to be friends
+  # def friend_requests
+  #   folks.map { |friendship| friendship.user unless friendship.confirmed }.compact
+  # end
+
+  # def confirm_friend(user)
+  #   friendship = inverse_friendships.find { |friendship| friendship.user == user }
+  #   friendship.confirmed = true
+  #   friendship.save
+  # end
+
+  # def friend?(user)
+  #   friends.include?(user)
+  # end
 
 
   # def friends_array

@@ -1,0 +1,12 @@
+<% @users.where(id: current_user.pending_requests).each do |x|  %>
+
+  <ul class="users-list">
+    <li>
+      Name: <%= x.name %>
+      <span class="profile-link">
+        <%= link_to 'See Profile',  user_path(x), class: 'profile-link' %>
+        <%= friendship_status(x.id) %>
+      </span>
+    </li>
+  </ul>
+<% end %>

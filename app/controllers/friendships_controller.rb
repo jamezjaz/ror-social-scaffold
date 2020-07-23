@@ -1,4 +1,11 @@
 class FriendshipsController < ApplicationController
+
+  def create
+    if friend?(user_id)
+      puts "Yesss again"
+    end
+
+  end
   # def create
   #   @friendship =  Friendship.new
   #   @friendship.user_id = current_user.id
@@ -14,12 +21,13 @@ class FriendshipsController < ApplicationController
   # end
   #
   # def update
-  #     @friendship = Friendship.find(params[:user_id])
-  #     @friendship.status = "Confirmed"
-  #     if @friendship.save
-  #       flash[:alert] = "Friend Request Accepted"
-  #       redirect_to user_path(@friendship.user_id)
-  #     end
+  #   fail
+  #     # @friendship = Friendship.find(params[:user_id])
+  #     # @friendship.status = "Confirmed"
+  #     # if @friendship.save
+  #     #   flash[:alert] = "Friend Request Accepted"
+  #     #   redirect_to user_path(@friendship.user_id)
+  #     # end
   # end
   #
   # def destroy
@@ -34,5 +42,7 @@ class FriendshipsController < ApplicationController
   #
   #
   #
+  #
+
 
 end
