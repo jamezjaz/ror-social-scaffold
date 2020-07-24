@@ -2,11 +2,16 @@
 
 class FriendshipsController < ApplicationController
   def create
-    @user = Friendship.new(friendship_id: params[:user_id])
-    @user.user_id = current_user.id
-    @user.status = 'Pending'
-    if @user.save
+    # fail
+    puts "paramameters is #{params[:user_id]}"
+    @friendship =  Friendship.new(friendship_id: params[:user_id])
+    @friendship.user_id = current_user.id
+    @friendship.status = "Pending"
+    if @friendship.save
       flash[:notice] = 'Friend Request Sent'
+      redirect_to users_path
+    else
+      flash[:notice] = 'Friend Request Not Sent'
       redirect_to users_path
     end
   end

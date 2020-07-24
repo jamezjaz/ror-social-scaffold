@@ -1,3 +1,0 @@
-<% current_user.friendships.where(status: 'Pending').each do |friendship| %>
-  <%= friendship.friends.name %>
-<% end %>
