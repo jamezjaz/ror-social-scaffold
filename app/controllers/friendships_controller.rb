@@ -1,5 +1,6 @@
-class FriendshipsController < ApplicationController
+# rubocop:disable Style/GuardClause
 
+class FriendshipsController < ApplicationController
   def create
     @user = Friendship.new(friendship_id: params[:user_id])
     @user.user_id = current_user.id
@@ -13,15 +14,11 @@ class FriendshipsController < ApplicationController
   def update
     @friendship = Friendship.find(params[:id])
     @friendship.update(status: true)
-    # @user = Friendship.where(user_id: current_user.id, friendship_id: params[:user_id])
+    @user = Friendship.where(user_id: current_user.id, friendship_id: params[:user_id])
     # if @user.save
-  #     flash[:notice] = 'Friend Request Accepted'
-  #     redirect_to users_path
-  #   end
-  end
-
-  def edit
-    
+    #   flash[:notice] = 'Friend Request Accepted'
+    #   redirect_to users_path
+    # end
   end
 
   # def create
@@ -55,12 +52,6 @@ class FriendshipsController < ApplicationController
   #     redirect_to user_path(@friendship.user_id)
   #   end
   # end
-  #
-  #
-  #
-  #
-  #
-  #
-
-
 end
+
+# rubocop:enable Style/GuardClause

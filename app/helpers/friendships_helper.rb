@@ -1,8 +1,6 @@
 module FriendshipsHelper
   def friend_request(user_id)
-    if friend?(user_id)
-      puts "Yess again"
-    end
+    puts 'Yess again' if friend?(user_id)
   end
 
   # def send_friend_request(user)
@@ -20,16 +18,4 @@ module FriendshipsHelper
   #   #   link_to('Send Friend Request', user_friendships_path(friend_id), method: :post)
   #   # end
   # end
-
-
-
-
-
-
-
-
-
-
-
-
 end

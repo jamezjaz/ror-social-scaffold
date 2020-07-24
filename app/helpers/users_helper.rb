@@ -1,7 +1,7 @@
 module UsersHelper
   def friendship_status(user_id)
     if current_user.friend?(user_id)
-      link_to 'Unfriend', friendship_path(user_id), method: :delete, :class => "friend_button"
+      link_to 'Unfriend', friendship_path(user_id), method: :delete, class: 'friend_button'
     elsif current_user.pending_requests.include?(user_id)
       link_to 'Cancel request', friendship_path(user_id), method: :delete, class: 'friend_button'
     elsif current_user.received_requests.include?(user_id)

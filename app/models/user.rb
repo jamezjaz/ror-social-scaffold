@@ -16,25 +16,24 @@ class User < ApplicationRecord
   # has_many :pending_friendships, -> { where status: 'Pending' }, class_name: 'Friendship', foreign_key: 'user_id'
   # has_many :confirmed_friendships, -> { where status: 'Confirmed' }, class_name: 'Friendship'
 
-
   def friends
-    friends_array = friendships.map { |friendship| friendship.friendship_id if friendship.status == "Confirmed" }
-    friends_array += friends_user.map { |friendship| friendship.user_id if friendship.status == "Confirmed" }
+    friends_array = friendships.map { |friendship| friendship.friendship_id if friendship.status == 'Confirmed' }
+    friends_array += friends_user.map { |friendship| friendship.user_id if friendship.status == 'Confirmed' }
     friends_array.compact
   end
 
   def received_requests
-    friends_array = friends_user.map { |friendship| friendship.user_id if friendship.status == "Pending" }
+    friends_array = friends_user.map { |friendship| friendship.user_id if friendship.status == 'Pending' }
     friends_array.compact
   end
 
   def pending_requests
-    friends_array = friendships.map { |friendship| friendship.friendship_id if friendship.status == "Pending" }
+    friends_array = friendships.map { |friendship| friendship.friendship_id if friendship.status == 'Pending' }
     friends_array.compact
   end
 
   def confirm_friendship(user)
-    friendship = friends_user.find { |friendship| friendship.user_id = user }
+    friendship = friends_user.find { |friend| friend.user_id = user }
     friendship.status = 'Confirmed'
     friendship.save
   end
@@ -42,7 +41,6 @@ class User < ApplicationRecord
   def friend?(user)
     friends.include?(user)
   end
-
 
   # # Users who have yet to confirm friend requests
   # def pending_friends
@@ -63,7 +61,6 @@ class User < ApplicationRecord
   # def friend?(user)
   #   friends.include?(user)
   # end
-
 
   # def friends_array
   #   friends_list = friendships.map{ |friendship| friendship.friendship_id if friendship.status == 'Confirmed' }
