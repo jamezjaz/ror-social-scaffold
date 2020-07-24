@@ -1,8 +1,4 @@
 module FriendshipsHelper
-  def friend_request(user_id)
-    puts 'Yess again' if friend?(user_id)
-  end
-
   # def send_friend_request(user)
   #   # puts user.first.status
   #

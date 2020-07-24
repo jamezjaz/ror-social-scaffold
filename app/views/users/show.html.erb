@@ -1,8 +1,6 @@
 <section class="user-section">
   <h2><%= "Name: #{@user.name}" %>
-    <% if current_user.id != @user.id %>
-      <%= friendship_status(@user.id) %>
-    <% end %>
+  <%= friendship_status_check(@user.id) %>
   </h2>
 
   <article class="timeline">

@@ -1,4 +1,10 @@
 module UsersHelper
+  def friendship_status_check(user_id)
+    if current_user.id != user_id
+      friendship_status(user_id)
+    end
+  end
+  
   def friendship_status(user_id)
     if current_user.friend?(user_id)
       # link_to 'Unfriend', friendship_path(user_id), method: :delete, class: 'friend_button'

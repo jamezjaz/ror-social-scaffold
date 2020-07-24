@@ -13,15 +13,9 @@
           Name: <%= user.name %>
           <span class="profile-link">
             <%= link_to 'See Profile',  user_path(user), class: 'profile-link' %>
-            <% if current_user.id != user.id %>
-              <%= friendship_status(user.id) %>
-            <% end %>
-
+            <%= friendship_status_check(user.id) %>
             <%#= link_to 'Send Request',  user_path(user), class: 'friend_button' %>
           </span>
-          <%# if current_user.id != user.id %>
-<!--            <span class="friend_button"></span>-->
-          <%# end %>
         </li>
       <% end %>
     </ul>
