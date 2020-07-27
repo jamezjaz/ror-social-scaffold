@@ -1,12 +1,12 @@
-# rubocop:disable Style/GuardClause
+# rubocop:disable Style/IdenticalConditionalBranches
 
 class FriendshipsController < ApplicationController
   def create
     # fail
     puts "paramameters is #{params[:user_id]}"
-    @friendship =  Friendship.new(friendship_id: params[:user_id])
+    @friendship = Friendship.new(friendship_id: params[:user_id])
     @friendship.user_id = current_user.id
-    @friendship.status = "Pending"
+    @friendship.status = 'Pending'
     if @friendship.save
       flash[:notice] = 'Friend Request Sent'
       redirect_to users_path
@@ -59,4 +59,4 @@ class FriendshipsController < ApplicationController
   # end
 end
 
-# rubocop:enable Style/GuardClause
+# rubocop:enable Style/IdenticalConditionalBranches

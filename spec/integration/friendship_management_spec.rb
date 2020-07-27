@@ -15,23 +15,4 @@ RSpec.describe 'Friendship management', type: :feature do
     expect(page).to have_content(user.name)
     expect(page).to have_link('See Profile')
   end
-
-# scenario 'they access the home page and comment a post' do
-#     visit root_path
-#     fill_in 'user_email', with: 'jay@gmail.com'
-#     fill_in 'user_password', with: 'abc123456789'
-
-#     click_on 'Log in'
-
-#     # visit posts_path
-#     # fill_in 'post[content]', with: 'messages'
-
-#     # click_button 'Save'
-
-#     # fill_in 'comment[content]', with: 'Comment Test'
-
-#     # click_button 'Comment'
-
-#     expect(page).to have_content('Signed in successfully')
-#   end
 end

@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe User, :type => :model do
+RSpec.describe User, type: :model do
   before(:each) do
     @user = User.new(name: 'James', email: 'mohammed002@gamil.com', password: '12345678')
     @user.save
@@ -65,13 +65,13 @@ RSpec.describe User, :type => :model do
 
   describe 'Association Tests' do
     it 'Should not be nil when new post is created' do
-      post1= @user.posts.create!(content: 'abc')
-    expect(@user.reload.posts).to_not be_nil
+      @user.posts.create!(content: 'abc')
+      expect(@user.reload.posts).to_not be_nil
     end
 
     it 'Should has many relationship when two new posts are created by one user' do
-      post1= @user.posts.create!(content: 'abc')
-      post2= @user.posts.create!(content: 'def')
+      post1 = @user.posts.create!(content: 'abc')
+      post2 = @user.posts.create!(content: 'def')
       expect(@user.reload.posts).to eq([post1, post2])
     end
   end
