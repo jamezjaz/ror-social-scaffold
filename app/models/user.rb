@@ -27,6 +27,11 @@ class User < ApplicationRecord
     friends_array.compact
   end
 
+  def mutual_friends
+    friends_array = friendships.map { |friendship| friendship.friendship_id if friendship.status == 'Confirmed' }
+    friends_array.compact
+  end
+
   def received_requests
     friends_array = friends_user.map { |friendship| friendship.user_id if friendship.status == 'Pending' }
     friends_array.compact

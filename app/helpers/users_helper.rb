@@ -19,4 +19,12 @@ module UsersHelper
       # link_to 'Send Request', friendships_path(user_id), method: :post, class: 'friend_button'
     end
   end
+
+  def mutual_friends(mutual1, mutual2)
+    mutual = []
+    mutual1.each do |x|
+      mutual << x if mutual2.include?(x)
+    end
+    mutual
+  end
 end
