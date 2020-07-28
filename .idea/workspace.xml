@@ -21,8 +21,9 @@
   <component name="ChangeListManager">
     <list default="true" id="d8d34562-5409-471f-b8e6-798f6e9515b8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/test.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db/test.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spec/examples.txt" beforeDir="false" afterPath="$PROJECT_DIR$/spec/examples.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/friendships_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/friendships_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/helpers/users_helper.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/helpers/users_helper.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/development.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db/development.sqlite3" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
