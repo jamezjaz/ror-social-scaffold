@@ -300,6 +300,27 @@ form {
   }
 }
 
+.show_grid {
+  display: grid;
+  grid-template-columns: 500px 1000px;
+
+  .mutual-section {
+    width: 500px;
+  }
+
+  .show-section {
+    width: 1000px;
+    padding: 0 10px 5px 10px;
+  }
+
+ .mutual-section,
+ .show-section {
+    border-bottom: #689f38 solid 5px;
+    border-left: #689f38 solid 5px;
+    border-right: #689f38 solid 5px;
+  }
+}
+
 .index_grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
