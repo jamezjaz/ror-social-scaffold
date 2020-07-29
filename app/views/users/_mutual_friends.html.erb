@@ -1,4 +1,4 @@
-<%mutual_friends(@user.mutual_friends, current_user.mutual_friends).each do |x| %>
+<% mutual_friends(@user.mutual_friends, current_user.mutual_friends).each do |x| %>
   <% y = User.where("id = #{x}") %>
-<%=link_to y.first.name, user_path(x) %>
+<h3> <%=link_to y.first.name, user_path(x) %> </h3>
 <% end %>
