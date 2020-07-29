@@ -17,7 +17,6 @@ RSpec.describe 'Friendship management', type: :feature do
     expect(page).to have_content('Welcome! You have signed up successfully.')
 
     click_on 'Timeline'
-    
     fill_in('post[content]', with: 'This test worked')
     click_button 'Save'
     expect(page).to have_content('Post was successfully created.')
