@@ -2,13 +2,9 @@ class FriendshipsController < ApplicationController
   def create
     @friendship = current_user.friendships.build(friendship_params)
     @friendship.status = 'Pending'
-    if @friendship.save
-      flash[:notice] = 'Friend Request Sent'
-      redirect_to users_path
-    else
-      flash[:notice] = 'Friend Request Not Sent'
-      redirect_to users_path
-    end
+    flash[:notice] = 'Friend Request Sent' if @friendship.save
+    flash[:notice] = 'Friend Request Not Sent' unless @friendship.save
+    redirect_to users_path
   end
 
   def update
@@ -17,11 +13,10 @@ class FriendshipsController < ApplicationController
     if @friendship.first.save
       @friendship = Friendship.create!(user_id: current_user.id, friendship_id: params[:id], status: 'Confirmed')
       flash[:notice] = 'Friend Request Approved'
-      redirect_to users_path
     else
       flash[:notice] = 'Friend Request Not Approved'
-      redirect_to users_path
     end
+    redirect_to users_path
   end
 
   def destroy
