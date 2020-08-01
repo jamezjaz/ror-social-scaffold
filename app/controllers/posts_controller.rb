@@ -1,11 +1,9 @@
-# rubocop:disable Layout/LineLength, Style/HashSyntax
-
 class PostsController < ApplicationController
   before_action :authenticate_user!
 
   def index
     @post = Post.new
-    timeline_posts
+    @timeline_posts = timeline_posts
   end
 
   def create
@@ -22,12 +20,10 @@ class PostsController < ApplicationController
   private
 
   def timeline_posts
-    @timeline_posts = Post.where(:user_id => current_user).order('created_at DESC') + Post.where(:user_id => current_user.friends_user).order('created_at DESC')
+    @timeline_posts = current_user.friends_and_own_posts
   end
 
   def post_params
     params.require(:post).permit(:content)
   end
 end
-
-# rubocop:enable Layout/LineLength, Style/HashSyntax

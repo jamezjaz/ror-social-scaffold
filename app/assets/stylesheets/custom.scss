@@ -151,8 +151,8 @@ a {
 
 .friends_List {
   text-align: center;
-  border-bottom: red double 10px;
-  border-top: red double 10px;
+  border-bottom: #949c8c double 6px;
+  border-top: #949c8c double 6px;
   color: #689f38;
   margin-bottom: 10px;
 }
@@ -352,6 +352,7 @@ form {
     margin-bottom: 16px;
     text-transform: capitalize;
     font-size: 1.2em;
+    padding-left: 0.5em;
   }
 
   .profile-link {

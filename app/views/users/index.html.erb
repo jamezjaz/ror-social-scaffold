@@ -13,8 +13,7 @@
           Name: <%= user.name %>
           <span class="profile-link">
             <%= link_to 'See Profile',  user_path(user), class: 'profile-link' %>
-            <%= friendship_status_check(user.id) %>
-            <%#= link_to 'Send Request',  user_path(user), class: 'friend_button' %>
+            <%= friendship_status_check(user) %>
           </span>
         </li>
       <% end %>
