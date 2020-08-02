@@ -26,10 +26,14 @@ class FriendshipsController < ApplicationController
       reverse_friendship = Friendship.where("user_id = #{current_user.id}"). where("friendship_id = #{params[:id]}")
       reverse_friendship.first.destroy
       flash[:notice] = 'Friend Request Removed'
-    else
+    elsif params[:method_name] == 'cancel'
       cancel_friendship = Friendship.where("user_id = #{current_user.id}"). where("friendship_id = #{params[:id]}")
       cancel_friendship.first.destroy
       flash[:notice] = 'Friend Request Cancelled'
+    else
+      friendship = Friendship.where("friendship_id = #{current_user.id}"). where("user_id = #{params[:id]}")
+      friendship.first.destroy
+      flash[:notice] = 'Friend Request Rejected'
     end
     redirect_to users_path
   end

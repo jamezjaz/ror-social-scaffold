@@ -1,0 +1,2 @@
+<%= link_to 'Approve', friendship_path(user_id), method: :put, class: 'friend_button' %>
+<%= link_to 'Reject', friendship_path(user_id, method_name: 'reject'), method: :delete, class: 'friend_button' %>
