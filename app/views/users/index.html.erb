@@ -1,12 +1,33 @@
-<section class="users-section">
-  <ul class="users-list">
-    <% @users.each do |user| %>
-      <li>
-        Name: <%= user.name %>
-        <span class="profile-link">
-          <%= link_to 'See Profile',  user_path(user), class: 'profile-link' %>
-        </span>
-      </li>
-    <% end %>
-  </ul>
-</section>
+
+<div class="index_grid">
+  <section class="users-section">
+    <h2 class="friends_List">Your Friends</h2>
+    <%= render 'friends' %>
+
+  </section>
+  <section class="users-section">
+    <h2 class="friends_List">All Users</h2>
+    <ul class="users-list">
+      <% @users.each do |user| %>
+        <li>
+          Name: <%= user.name %>
+          <span class="profile-link">
+            <%= link_to 'See Profile',  user_path(user), class: 'profile-link' %>
+            <%= friendship_status_check(user) %>
+          </span>
+        </li>
+      <% end %>
+    </ul>
+  </section>
+  <div class="index_grid-left">
+    <section class="users-section">
+      <h2 class="friends_List">Received Requests</h2>
+      <%= render 'received' %>
+
+    </section>
+    <section class="users-section">
+      <h2 class="friends_List">Pending Requests</h2>
+      <%= render 'pending' %>
+    </section>
+  </div>
+</div>

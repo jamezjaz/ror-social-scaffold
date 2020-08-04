@@ -136,6 +136,31 @@ a {
   }
 }
 
+.friend_button {
+  background: #689f38;
+  padding: 4px;
+  border-radius: 5px;
+}
+
+.friend_button_link {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: lighter;
+}
+
+.friends_List {
+  text-align: center;
+  border-bottom: #949c8c double 6px;
+  border-top: #949c8c double 6px;
+  color: #689f38;
+  margin-bottom: 10px;
+}
+
+.friends_List:hover {
+  color: rgba(18, 90, 6, 0.91);
+}
+
 form {
   width: 80%;
   margin: 8px 0;
@@ -275,6 +300,50 @@ form {
   }
 }
 
+.show_grid {
+  display: grid;
+  grid-template-columns: 500px 1000px;
+
+  .mutual-section {
+    width: 500px;
+  }
+
+  .show-section {
+    width: 1000px;
+    padding: 0 10px 5px 10px;
+  }
+
+  .mutual-section,
+  .show-section {
+    border-bottom: #689f38 solid 5px;
+    border-left: #689f38 solid 5px;
+    border-right: #689f38 solid 5px;
+  }
+}
+
+.index_grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+
+  section {
+    width: 600px;
+    border-bottom: #689f38 solid 5px;
+    border-left: #689f38 solid 5px;
+    border-right: #689f38 solid 5px;
+  }
+}
+
+.index_grid_left {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  section {
+    border-bottom: #689f38 solid 5px;
+    border-left: #689f38 solid 5px;
+    border-right: #689f38 solid 5px;
+  }
+}
+
 .users-section {
   width: 100%;
   margin: 10px;
@@ -283,6 +352,7 @@ form {
     margin-bottom: 16px;
     text-transform: capitalize;
     font-size: 1.2em;
+    padding-left: 0.5em;
   }
 
   .profile-link {

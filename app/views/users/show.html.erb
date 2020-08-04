@@ -1,5 +1,14 @@
-<section class="user-section">
-  <h2><%= "Name: #{@user.name}" %></h2>
+<div class="show_grid">
+  <section class="mutual-section">
+    <h2 class="friends_List">Mutual Friends</h2>
+    <%= render 'mutual_friends' %>
+
+  </section>
+  <section class="user-section show-section">
+  <h2><%= "Name: #{@user.name}" %>
+  <%= friendship_status_check(@user) %>
+  </h2>
+
   <article class="timeline">
     <h3>Recent posts:</h3>
     <ul class="posts">
@@ -7,3 +16,4 @@
     </ul>
   </article>
 </section>
+</div>
