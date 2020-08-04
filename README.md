@@ -1,6 +1,7 @@
 # Scaffold for social media app with Ruby on Rails
 
 > This repo includes intial code for social media app with basic styling. Its purpose is to be a starting point for Microverse students.
+Here, a new user can sign up. An existing user can sign in, see all users, send a friend request, cancel sent request, approve or reject received friend request, create post(s), comment on his/her post(s) as well as others', like his/her post(s) as well as others'.
 
 ## Built With
 
@@ -9,7 +10,7 @@
 
 ## Live Demo
 
-TBA
+[Heroku Live](https://young-refuge-59165.herokuapp.com/)
 
 
 ## Getting Started
@@ -38,7 +39,6 @@ Setup database with:
 ```
 
 
-
 ### Usage
 
 Start server with:
@@ -59,11 +59,16 @@ Open `http://localhost:3000/` in your browser.
 
 ### Deployment
 
-TBA
+Heroku
 
-## Authors
+## Author
 
-TBA
+👤 **James Chigozie Odufu**
+
+- Github: [@githubhandle](https://github.com/jamezjaz)
+- Twitter: [@twitterhandle](https://twitter.com/jamezjaz90)
+- Linkedin: [@linkedin](https://linkedin.com/in/james-odufu-ba2a4a125)
+
 
 ## 🤝 Contributing
 
