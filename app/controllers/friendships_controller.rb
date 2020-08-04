@@ -20,20 +20,13 @@ class FriendshipsController < ApplicationController
   end
 
   def destroy
+    @user = Friendship.all
     if params[:method_name] == 'delete'
-      friendship = Friendship.where("friendship_id = #{current_user.id}"). where("user_id = #{params[:id]}")
-      friendship.first.destroy
-      reverse_friendship = Friendship.where("user_id = #{current_user.id}"). where("friendship_id = #{params[:id]}")
-      reverse_friendship.first.destroy
-      flash[:notice] = 'Friend Request Removed'
-    elsif params[:method_name] == 'cancel'
-      cancel_friendship = Friendship.where("user_id = #{current_user.id}"). where("friendship_id = #{params[:id]}")
-      cancel_friendship.first.destroy
-      flash[:notice] = 'Friend Request Cancelled'
-    else
-      friendship = Friendship.where("friendship_id = #{current_user.id}"). where("user_id = #{params[:id]}")
-      friendship.first.destroy
-      flash[:notice] = 'Friend Request Rejected'
+      flash[:notice] = 'Friend Unfriended' if @user.unfriend_friendship(current_user.id, params[:id])
+    elsif params[:method_name] == 'cancel' || params[:method_name] == 'reject'
+      if @user.cancel_friendship(params[:method_name], current_user.id, params[:id])
+        flash[:notice] = "Friend Request #{params[:method_name]}ed"
+      end
     end
     redirect_to users_path
   end
