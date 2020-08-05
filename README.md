@@ -39,7 +39,6 @@ Setup database with:
 ```
 
 
-
 ### Usage
 
 Start server with:
@@ -70,7 +69,6 @@ Heroku
 - Twitter: [@twitterhandle](https://twitter.com/jamezjaz90)
 - Linkedin: [@linkedin](https://linkedin.com/in/james-odufu-ba2a4a125)
 
-TBA
 
 ## 🤝 Contributing
 
